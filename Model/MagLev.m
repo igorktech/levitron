@@ -6,7 +6,7 @@ g = 9.8
 global L 
 L = 0.00392
 global R 
-R = 4
+R = 10.8
 u = 12
 global i 
 i = u/R
