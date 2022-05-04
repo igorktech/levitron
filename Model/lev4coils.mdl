@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.28"
+    ComputedModelVersion    "1.29"
     NumModelReferences	    0
     NumTestPointedSignals   2
     TestPointedSignal {
@@ -96,9 +96,9 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1251.0, 564.0]
-	ZoomFactor		[0.5]
-	Offset			[1206.8852603336327, 720.73656965860118]
-	SceneRectInView		[1206.8852603336327, 720.73656965860118, 2502.0, 1128.0]
+	ZoomFactor		[1.5]
+	Offset			[-418.69147827547971, 1334.7317734955318]
+	SceneRectInView		[-418.69147827547971, 1334.7317734955318, 834.0, 376.0]
       }
       Array {
 	Type			"Simulink.DockComponentInfo"
@@ -158,9 +158,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "macbook_pro"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue May 03 00:51:21 2022"
-  RTWModifiedTimeStamp	  573439875
-  ModelVersionFormat	  "%<AutoIncrement:1.28>"
+  LastModifiedDate	  "Tue May 03 17:37:54 2022"
+  RTWModifiedTimeStamp	  573471760
+  ModelVersionFormat	  "%<AutoIncrement:1.29>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -1335,9 +1335,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "50"
+    ZoomFactor		    "150"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "322"
+    SIDHighWatermark	    "324"
     SimulinkSubDomain	    "Simulink"
     Block {
       BlockType		      Abs
@@ -4001,6 +4001,48 @@ Model {
       ymin		      "-0.0284"
       ymax		      "0.0284"
       st		      "-1"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope"
+      SID		      "323"
+      Ports		      []
+      Position		      [185, 14, 215, 46]
+      ZOrder		      832
+      IOType		      "viewer"
+      List {
+	ListType		IOSignalStrings
+	set0ParseKeys		"14"
+	set0Sigs		"Integrator7:o1"
+      }
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
+      "ources','WiredSimulink',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domain"
+      "',true),extmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'V"
+      "ersion','2021a')),'Version','2021a')"
+      NumInputPorts	      "1"
+      Floating		      off
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope42"
+      SID		      "324"
+      Ports		      []
+      Position		      [185, 14, 215, 46]
+      ZOrder		      833
+      IOType		      "viewer"
+      List {
+	ListType		IOSignalStrings
+	set0ParseKeys		"14"
+	set0Sigs		"Integrator7:o1"
+      }
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
+      "ources','WiredSimulink',true,'DataLoggingVariableName','ScopeData2'),extmgr.Configuration('Visuals','Time Domain"
+      "',true),extmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true,'V"
+      "ersion','2021a')),'Version','2021a')"
+      NumInputPorts	      "1"
+      Floating		      off
     }
     Line {
       ZOrder		      1
