@@ -43,9 +43,10 @@ float k;
 float p;
 float i;
 float d;
+
 void setup() {
   // initialize serial communications at 9600 bps:
-  Serial.begin(115200);
+//  Serial.begin(115200);
   pinMode(Pin1,OUTPUT);
   pinMode(Pin2,OUTPUT);
 }
@@ -76,17 +77,18 @@ void loop() {
   
   ref = (analogRead(analogInPin1) + analogRead(analogInPin1) +analogRead(analogInPin1) + analogRead(analogInPin1) + analogRead(analogInPin1)) / 5;
    
-    if (ref >= 300)
+    if (ref >= 500)
     { //ограничение задани€
      ref = 500;
     }
+    
     field = (analogRead(analogInPin0) + analogRead(analogInPin0) +analogRead(analogInPin0) + analogRead(analogInPin0) + analogRead(analogInPin0)) ; //значение с датчика Холла
       diff = prevField - field; // находим разницу с предыдущим значением (Дифференциальная составляющая)
       prevField = field;
     error = ref - field; // ошибка управления для 8 бит ацп
     integral += error;   // чем больше ки тем больше перерегулирование
                //сигнал управления ПИД-регулятора
-    control = error*(-2) + diff *(-70)+integral/(500);//+integral/(-1000);//0 + error*(-600) + diff *(-500)-integral/100;
+    control = error*(-4.5) + diff *(-133)+integral/(-450);//+integral/(-1000);//0 + error*(-600) + diff *(-500)-integral/100;
 // control = -1023;
 //    Serial.print(y1);
 //  Serial.print(" "); // a space ' ' or  tab '\t' character is printed between the two values.
@@ -138,7 +140,9 @@ void loop() {
 //            Serial.print("k");
   //   Serial.println(k);
 //    Serial.print("p");
-    Serial.println(control);
+//    Serial.print(control);
+//    Serial.print(',');
+//    Serial.println(ref);
 //     Serial.print("i");
 //     Serial.println(i);
 //     Serial.print("d");

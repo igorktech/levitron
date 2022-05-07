@@ -26,7 +26,6 @@ from PyQt5.QtWidgets import QMessageBox
 import sys
 import numpy as np
 
-# https://stackoverflow.com/questions/35932660/qcombobox-click-event обновление по клику
 
 app = QtWidgets.QApplication([])
 ui = uic.loadUi("design.ui")
@@ -270,6 +269,8 @@ def toggleState():
     else:
         ui.startB.setText("STOP")
         ui.graph.clear()
+        global data
+        data = pd.DataFrame([], index = ['OUTPUT', 'INPUT', 'TIME'])
         onOpen()
         serialSend([ui.K.value()/1000, ui.P.value()/1000, ui.I.value()/1000, ui.D.value()/1000])
         global time_sec
