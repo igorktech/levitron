@@ -26,7 +26,6 @@ from PyQt5.QtWidgets import QMessageBox
 import sys
 import numpy as np
 
-
 app = QtWidgets.QApplication([])
 ui = uic.loadUi("design.ui")
 ui.setWindowTitle("LevitronGUI")
@@ -37,6 +36,7 @@ Theme = open("themes/py_dracula_theme_light.qss", 'r')
 with Theme:
     qss = Theme.read()
     app.setStyleSheet(qss)
+
 
 class TableModel(QAbstractTableModel):
 
@@ -79,7 +79,6 @@ class TableView(QWidget):
         self.resize(400, 300)
 
 
-
 class App(QWidget):
 
     def __init__(self):
@@ -119,7 +118,6 @@ class App(QWidget):
 
             # print(fileName)
 
-
     # def openFileNamesDialog(self):
     #     options = QFileDialog.Options()
     #     options |= QFileDialog.DontUseNativeDialog
@@ -139,16 +137,14 @@ class App(QWidget):
             fileName += ".xlsx"
             df.to_excel(fileName, sheet_name='output_data')
             print(fileName)
-    def saveFileDialog(self):
+
+    def saveFilePictureDialog(self):
         options = QFileDialog.Options()
         options |= QFileDialog.DontUseNativeDialog
         fileName, _ = QFileDialog.getSaveFileName(self, 'Save File', "",
                                                   "Image Files (*.png)", options=options)
         if fileName:
             return fileName
-
-
-
 
 
 global time_sec
@@ -174,28 +170,26 @@ ui.comL.addItems(portList)
 
 timer = QElapsedTimer()
 
-
 global data
-data = pd.DataFrame([], index = ['OUTPUT', 'INPUT', 'TIME'])
-
+data = pd.DataFrame([], index=['OUTPUT', 'INPUT', 'TIME'])
 
 ui.graph.showGrid(x=True, y=True)
-styles = {'color':'r', 'font-size':'20px'}
+styles = {'color': 'r', 'font-size': '20px'}
 ui.graph.setLabel('left', 'Положение, В', **styles)
 ui.graph.setLabel('bottom', 'Время, с', **styles)
-ui.graph.setBackground(QtGui.QColor(255,255,255,25))
+ui.graph.setBackground(QtGui.QColor(255, 255, 255, 25))
 pen_out = pg.mkPen(color=(255, 0, 0))
 pen_input = pg.mkPen(color=(205, 25, 200))
 
 
 def onRead():
-    if not serial.canReadLine(): return     # выходим если нечего читать
+    if not serial.canReadLine(): return  # выходим если нечего читать
     rx = serial.readLine()
 
     rxs = str(rx, 'utf-8').strip()
     frame = rxs.split(',')  # returns in out
     # print(frame)
-    num = [5/1024, 5/1024]
+    num = [5 / 1024, 5 / 1024]
     frame = np.multiply(list(map(float, frame)), num).tolist()
 
     if frame:
@@ -208,17 +202,19 @@ def onRead():
         data.insert(loc=len(data.columns), column=str(len(data.columns)), value=frame)
 
         ui.graph.clear()
-        ui.graph.plot(list(data.loc['TIME']), list(data.loc['OUTPUT']), name='OUTPUT',pen = pen_out)
-        ui.graph.plot(list(data.loc['TIME']), list(data.loc['INPUT']), name='INPUT' , pen=pen_input)
+        ui.graph.plot(list(data.loc['TIME']), list(data.loc['OUTPUT']), name='OUTPUT', pen=pen_out)
+        ui.graph.plot(list(data.loc['TIME']), list(data.loc['INPUT']), name='INPUT', pen=pen_input)
         # ui.graph.scene()
 
+
 def thread():
-    t1=Thread(target=onRead)
+    t1 = Thread(target=onRead)
     print("fff")
     t1.start()
 
+
 def onOpen():
-    #timer.start()
+    # timer.start()
     serial.setPortName(ui.comL.currentText())
     serial.open(QIODevice.ReadWrite)
 
@@ -233,36 +229,42 @@ def serialSend(data):
     print(txs.encode())
     serial.write(txs.encode())
 
+
 def onClose():
     serial.close()
 
+
 def PIDcontrol():
-    ui.KLabel.setText(str(ui.K.value()/10000))
-    ui.PLabel.setText(str(ui.P.value()/10000))
-    ui.ILabel.setText(str(ui.I.value()/10000))
-    ui.DLabel.setText(str(ui.D.value()/10000))
+    ui.KLabel.setText(str(ui.K.value() / 10000))
+    ui.PLabel.setText(str(ui.P.value() / 10000))
+    ui.ILabel.setText(str(ui.I.value() / 10000))
+    ui.DLabel.setText(str(ui.D.value() / 10000))
+
 
 def PIDcontrolLabel():
     if ui.KLabel.text():
-        ui.K.setValue(int(float(ui.KLabel.text())*10000))
+        ui.K.setValue(int(float(ui.KLabel.text()) * 10000))
     if ui.PLabel.text():
-        ui.P.setValue(int(float(ui.PLabel.text())*10000))
+        ui.P.setValue(int(float(ui.PLabel.text()) * 10000))
     if ui.ILabel.text():
-        ui.I.setValue(int(float(ui.ILabel.text())*10000))
+        ui.I.setValue(int(float(ui.ILabel.text()) * 10000))
     if ui.DLabel.text():
-        ui.D.setValue(int(float(ui.DLabel.text())*10000))
+        ui.D.setValue(int(float(ui.DLabel.text()) * 10000))
+
 
 def toggle(var):
     return not var
+
+
 def toggleState():
     # отправить данные о регуляторе
-    #добавить отправку данных о старте стопе
+    # добавить отправку данных о старте стопе
 
     global state
     state = toggle(state)
-    ui.groupBox.setDisabled(state)
+    ui.PIDGroupBox.setDisabled(state)
     # ui.groupBox_2.setDisabled(state)
-    ui.groupBox_3.setDisabled(state)
+    ui.DataGroupBox.setDisabled(state)
     if not state:
         ui.startB.setText("START")
         onClose()
@@ -270,20 +272,23 @@ def toggleState():
         ui.startB.setText("STOP")
         ui.graph.clear()
         global data
-        data = pd.DataFrame([], index = ['OUTPUT', 'INPUT', 'TIME'])
+        data = pd.DataFrame([], index=['OUTPUT', 'INPUT', 'TIME'])
         onOpen()
-        serialSend([ui.K.value()/1000, ui.P.value()/1000, ui.I.value()/1000, ui.D.value()/1000])
+        serialSend([ui.K.value() / 1000, ui.P.value() / 1000, ui.I.value() / 1000, ui.D.value() / 1000])
         global time_sec
         time_sec = time.time()
 
+
 def call_save():
+    global data
     ex = App()
     ex.saveFileDialog(data)
     # ex.show()
+
+
 def call_open():
     global data
     ex = App()
-
 
     data = ex.openFileNameDialog()
 
@@ -292,28 +297,24 @@ def call_open():
         ui.graph.plot(list(data.loc['TIME']), list(data.loc['OUTPUT']), name='OUTPUT', pen=pen_out)
         ui.graph.plot(list(data.loc['TIME']), list(data.loc['INPUT']), name='INPUT', pen=pen_input)
 
-def call_show_table(): #TODO
+
+def call_show_table():  # TODO
     global data
     table = TableView(data)
     table.show()
     table.exec()
 
+
 def call_save_chart():
     p = ui.graph.grab()
     ex = App()
-    name =  ex.saveFileDialog()
+    name = ex.saveFilePictureDialog()
     p.save(name, 'png')
+
+
 def mouse_clicked(event):
     print("l")
 
-# saveFile = QShortcut(QKeySequence('Ctrl+S'))
-#
-# saveFile.activated.connect(call_save)
-
-# saveFile = QAction("&Save File",self)
-# saveFile.setShortcut("Ctrl+S")#
-# saveFile.setStatusTip('Save File')
-# saveFile.triggered.connect(call_save)
 
 serial.readyRead.connect(onRead)
 ui.startB.clicked.connect(toggleState)
@@ -334,12 +335,8 @@ ui.DLabel.editingFinished.connect(PIDcontrolLabel)
 # Capture mouse click events
 ui.graph.scene().sigMouseClicked.connect(mouse_clicked)
 
-
 ui.show()
 app.exec()
-
-
-
 
 # def main(args):
 #     app=QtWidgets.QApplication(args)
@@ -361,7 +358,7 @@ app.exec()
 # app.exec_()
 
 # if __name__ == '__main__':
-    # app = QApplication(sys.argv)
-    # ex = App()
-    # ex.show()
-    # sys.exit(app.exec_())
+# app = QApplication(sys.argv)
+# ex = App()
+# ex.show()
+# sys.exit(app.exec_())
