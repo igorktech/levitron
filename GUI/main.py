@@ -188,7 +188,7 @@ def onRead():
 
     rxs = str(rx, 'utf-8').strip()
     frame = rxs.split(',')  # returns in out
-    # print(frame)
+     # print(string(rxs)
     num = [5 / 1024, 5 / 1024]
     frame = np.multiply(list(map(float, frame)), num).tolist()
 
@@ -274,7 +274,7 @@ def toggleState():
         global data
         data = pd.DataFrame([], index=['OUTPUT', 'INPUT', 'TIME'])
         onOpen()
-        serialSend([ui.K.value() / 1000, ui.P.value() / 1000, ui.I.value() / 1000, ui.D.value() / 1000])
+        serialSend([ui.K.value() / 10000, ui.P.value() / 10000, ui.I.value() / 10000, ui.D.value() / 10000])
         global time_sec
         time_sec = time.time()
 

@@ -4,7 +4,7 @@
 global g
 g = 9.8
 global L 
-L = 0.00388
+L = 0.00388%/2 % чтобы не менять модель, потом переделать!
 L1 = L
 L2 = L
 L3 = L
@@ -50,62 +50,100 @@ global K3
 K3 = K1
 global K4 
 K4 = K2
+% 
+% x10z = -0.03
+% x10y = -0.008
+% x10x = -0.008
+% 
+%   Legend = []
+% 
+%     figure(1)
+%     hold on
+%     grid on
+% for i=1:3
+%    x10x = x10x + i*0.004;
+%     out = sim('lev4coils.mdl');
+%    
+%         plot(out.scopeOutz.time,out.scopeOutz.signals.values,'-.','LineWidth', 1)
+%         t = append("sim="  , num2str(i),",z0=",num2str(x10z));
+%         Legend = [Legend t];
+%         plot(out.scopeOutx.time,out.scopeOuty.signals.values,'-.','LineWidth', 1)
+%         t = append("sim="  , num2str(i),",y0=",num2str(x10y));
+%         Legend = [Legend t];
+%         plot(out.scopeOuty.time,out.scopeOutx.signals.values,'-.','LineWidth', 1)
+%         t = append("sim="  , num2str(i),",x0=",num2str(x10x));
+%         Legend = [Legend t];
+%     
+% 
+%     legend(Legend);
+% end
+% 
+%    
+% for i=1:3
+%    x10y = x10y + i*0.004;
+%     out = sim('lev4coils.mdl');
+%    
+%         plot(out.scopeOutz.time,out.scopeOutz.signals.values,'--','LineWidth', 1)
+%         t = append("sim="  , num2str(i+3),",z0=",num2str(x10z));
+%         Legend = [Legend t];
+%         plot(out.scopeOutx.time,out.scopeOuty.signals.values,'--','LineWidth', 1)
+%         t = append("sim="  , num2str(i+3),",y0=",num2str(x10y));
+%         Legend = [Legend t];
+%         plot(out.scopeOuty.time,out.scopeOutx.signals.values,'--','LineWidth', 1)
+%         t = append("sim="  , num2str(i+3),",x0=",num2str(x10x));
+%         Legend = [Legend t];
+%     
+% 
+%     legend(Legend);
+% end
+    
+%xyz
 
+x10z = -0.03
+x10y = -0.008
+x10x = -0.008
 
-% x0 = [x1 ;0 ;x3]
-%  eps = 0.001;
-%  u1 = u:-0.2:0.2;
-%  u = u1;
-%   x0 = [x1; x2;x3];
-%  xx = [];
-%  for i = 1:length(u1)
-%  x = newton('get_F7', 'get_G7', x0, u1(i), eps);
-%  xx = [xx x];
-%  x0 = x;
-%  end
-% plot(u(1,:), xx(1,:),'LineWidth', 2)
-%  hold on
-%  grid on
-%  plot(u(1,:), xx(2,:),'k--')
-%  plot(u(1,:), xx(3,:), '-*')
-%  xlabel('U, в.')
-%  ylabel('Ф, \omega, i_д, о.е.')
-%  legend('x(U)','v(U)','i(U)');
-% 
-% 
-% 
-% 
-% 
-% function f = get_F7(x,u)
-% global g
-% global L 
-% global R 
-% global i 
-% global m 
-% global K 
-% 
-%     f = [x(2); g-K/m*(x(3)^2/x(1));u/L-R*x(3)/L]
-% end
-% 
-% 
-% 
-% function gk = get_G7(x,u)
-% global g
-% global L 
-% global R  
-% global i 
-% global m 
-% global K 
-%     gk = [0 1 0;K*x(3)^2/m/(x(1)^2) 0 -2*K*x(3)/m/(x(1)^2); 0 0 -R/L];
-% end
-% 
-% function [x]=newton(F,G,x0,u,e)
-%     y=feval(F,x0,u);
-%     x=x0;
-% while(norm(y)> e)
-%     gr=feval(G,x,u);
-%     x=x-inv(gr)*y;
-%     y=feval(F,x,u);
-%     clc,disp(y)
-% end
-% end
+  Legend = []
+
+    figure(2)
+    hold on
+    grid on
+for i=1:3
+   x10x = x10x + i*0.004;
+    out = sim('lev4coils.mdl');
+   
+    plot(out.scopeOutx.signals.values,out.scopeOuty.signals.values)
+        
+        t = append("sim="  , num2str(i),",z0=",num2str(x10z));
+        
+       
+        t = append(t,",y0=",num2str(x10y));
+       
+        
+        t = append(t,",x0=",num2str(x10x));
+        Legend = [Legend t];
+    
+
+    legend(Legend);
+end
+
+   
+for i=1:3
+   x10y = x10y + i*0.004;
+    out = sim('lev4coils.mdl');
+   
+    plot(out.scopeOutx.signals.values,out.scopeOuty.signals.values,'--')
+        
+        t = append("sim="  , num2str(i),",z0=",num2str(x10z));
+        
+       
+        t = append(t,",y0=",num2str(x10y));
+       
+        
+        t = append(t,",x0=",num2str(x10x));
+        Legend = [Legend t];
+    
+
+    legend(Legend);
+end
+ 
