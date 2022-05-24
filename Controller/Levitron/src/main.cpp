@@ -111,9 +111,6 @@ void loop() {
 
     if (Serial.read() == '\n') {
 
-
-
-
 //    Serial.println(pidY.control);
 //    Serial.println(pidY.field);
         // Serial.print(pidZ.p);
@@ -140,17 +137,14 @@ void control_f(int &control, const int pinPWM, const int dir1, const int dir2) {
         digitalWrite(dir1, HIGH);
         digitalWrite(dir2, LOW);
         analogWrite(pinPWM, control);
-
     } else if ((control >= 0) && (control <= 1023)) {
         digitalWrite(dir1, HIGH);
         digitalWrite(dir2, LOW);
         analogWrite(pinPWM, control);
-
     } else if ((control < 0) && (control >= (-1023))) { //low border
         digitalWrite(dir1, LOW);
         digitalWrite(dir2, HIGH);
         analogWrite(pinPWM, abs(control));
-
     } else if (control < -1023) {
         control = -1023;
         digitalWrite(dir1, LOW);

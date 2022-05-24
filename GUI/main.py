@@ -6,24 +6,12 @@ from PyQt5 import QtGui
 from PyQt5.QtCore import Qt
 from PyQt5.QtCore import QAbstractTableModel
 from PyQt5.QtWidgets import QApplication, QWidget, QInputDialog, QLineEdit, QFileDialog
-from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QAction, QTableWidget, QTableWidgetItem, QVBoxLayout
-from PyQt5.QtGui import QIcon
-from PyQt5.QtCore import pyqtSlot
-from PyQt5.QtWidgets import QWidget, QShortcut, QApplication, QMessageBox
-from PyQt5.QtWidgets import QMainWindow, QAction, qApp, QApplication
-from PyQt5.QtGui import QKeySequence
-from PyQt5.QtGui import QIcon, QPixmap
 import time
-from threading import *
-from pyqtgraph import PlotWidget
 import pyqtgraph as pg
 import pandas as pd
-import openpyxl
 from PyQt5.QtWidgets import QMainWindow, QLabel, QGridLayout, QWidget
-from PyQt5.QtWidgets import QPushButton
 from PyQt5.QtWidgets import QMessageBox
-import sys
 import numpy as np
 
 app = QtWidgets.QApplication([])
@@ -94,11 +82,6 @@ class App(QWidget):
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
 
-        # self.openFileNameDialog()
-        # self.openFileNamesDialog()
-        # self.saveFileDialog()
-
-        # self.show()
 
     def openFileNameDialog(self):
         options = QFileDialog.Options()
@@ -106,25 +89,15 @@ class App(QWidget):
         fileName, _ = QFileDialog.getOpenFileName(self, "Open File", "",
                                                   "Excel Files (*.xlsx)", options=options)
         if fileName:
-            print(fileName)
-            # df.to_excel(fileName, sheet_name='output_data')
+
+
             ret = QMessageBox.question(self, 'WARNING', "Overwrite current data?",
                                        QMessageBox.Ok | QMessageBox.Cancel, QMessageBox.Cancel)
 
             if ret == QMessageBox.Ok:
                 file = pd.read_excel(fileName, sheet_name='output_data', index_col=0)
                 return file
-            # if ret == QMessageBox.Cancel:
 
-            # print(fileName)
-
-    # def openFileNamesDialog(self):
-    #     options = QFileDialog.Options()
-    #     options |= QFileDialog.DontUseNativeDialog
-    #     files, _ = QFileDialog.getOpenFileNames(self, "QFileDialog.getOpenFileNames()", "",
-    #                                             "All Files (*);;Python Files (*.py)", options=options)
-    #     if files:
-    #         print(files)
 
     def saveFileDialog(self, df):
         options = QFileDialog.Options()
@@ -145,7 +118,6 @@ class App(QWidget):
                                                   "Image Files (*.png)", options=options)
         if fileName:
             return fileName
-
 
 global time_sec
 time_sec = 0
@@ -181,14 +153,13 @@ ui.graph.setBackground(QtGui.QColor(255, 255, 255, 25))
 pen_out = pg.mkPen(color=(255, 0, 0))
 pen_input = pg.mkPen(color=(205, 25, 200))
 
-
 def onRead():
     if not serial.canReadLine(): return  # выходим если нечего читать
     rx = serial.readLine()
 
     rxs = str(rx, 'utf-8').strip()
     frame = rxs.split(',')  # returns in out
-     # print(string(rxs)
+
     num = [5 / 1024, 5 / 1024]
     frame = np.multiply(list(map(float, frame)), num).tolist()
 
@@ -197,27 +168,18 @@ def onRead():
 
         frame.append(time.time() - time_sec)
         global data
-        # print(str(len(data.columns)))
+
 
         data.insert(loc=len(data.columns), column=str(len(data.columns)), value=frame)
 
         ui.graph.clear()
         ui.graph.plot(list(data.loc['TIME']), list(data.loc['OUTPUT']), name='OUTPUT', pen=pen_out)
         ui.graph.plot(list(data.loc['TIME']), list(data.loc['INPUT']), name='INPUT', pen=pen_input)
-        # ui.graph.scene()
-
-
-def thread():
-    t1 = Thread(target=onRead)
-    print("fff")
-    t1.start()
-
 
 def onOpen():
-    # timer.start()
+
     serial.setPortName(ui.comL.currentText())
     serial.open(QIODevice.ReadWrite)
-
 
 def serialSend(data):
     txs = ""
@@ -229,17 +191,14 @@ def serialSend(data):
     print(txs.encode())
     serial.write(txs.encode())
 
-
 def onClose():
     serial.close()
-
 
 def PIDcontrol():
     ui.KLabel.setText(str(ui.K.value() / 10000))
     ui.PLabel.setText(str(ui.P.value() / 10000))
     ui.ILabel.setText(str(ui.I.value() / 10000))
     ui.DLabel.setText(str(ui.D.value() / 10000))
-
 
 def PIDcontrolLabel():
     if ui.KLabel.text():
@@ -251,10 +210,8 @@ def PIDcontrolLabel():
     if ui.DLabel.text():
         ui.D.setValue(int(float(ui.DLabel.text()) * 10000))
 
-
 def toggle(var):
     return not var
-
 
 def toggleState():
     # отправить данные о регуляторе
@@ -278,13 +235,11 @@ def toggleState():
         global time_sec
         time_sec = time.time()
 
-
 def call_save():
     global data
     ex = App()
     ex.saveFileDialog(data)
     # ex.show()
-
 
 def call_open():
     global data
@@ -297,24 +252,17 @@ def call_open():
         ui.graph.plot(list(data.loc['TIME']), list(data.loc['OUTPUT']), name='OUTPUT', pen=pen_out)
         ui.graph.plot(list(data.loc['TIME']), list(data.loc['INPUT']), name='INPUT', pen=pen_input)
 
-
-def call_show_table():  # TODO
+def call_show_table():
     global data
     table = TableView(data)
     table.show()
     table.exec()
-
 
 def call_save_chart():
     p = ui.graph.grab()
     ex = App()
     name = ex.saveFilePictureDialog()
     p.save(name, 'png')
-
-
-def mouse_clicked(event):
-    print("l")
-
 
 serial.readyRead.connect(onRead)
 ui.startB.clicked.connect(toggleState)
@@ -332,33 +280,5 @@ ui.PLabel.editingFinished.connect(PIDcontrolLabel)
 ui.ILabel.editingFinished.connect(PIDcontrolLabel)
 ui.DLabel.editingFinished.connect(PIDcontrolLabel)
 
-# Capture mouse click events
-ui.graph.scene().sigMouseClicked.connect(mouse_clicked)
-
 ui.show()
 app.exec()
-
-# def main(args):
-#     app=QtWidgets.QApplication(args)
-#     window=MainWindow()
-#     window.show()
-#     sys.exit(app.exec_())
-#     #app.exec_()
-# #     app = QApplication(args)
-# #     table = TableView(data, 4, 3)
-# #     table.show()
-# #     sys.exit(app.exec_())
-# #
-# #
-# if __name__ == "__main__":
-#     main(sys.argv)
-# app=QtWidgets.QApplication(sys.argv)
-# window=MainWindow()
-# window.show()
-# app.exec_()
-
-# if __name__ == '__main__':
-# app = QApplication(sys.argv)
-# ex = App()
-# ex.show()
-# sys.exit(app.exec_())
