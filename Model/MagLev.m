@@ -31,17 +31,17 @@ for i = 1:length(u1)
     xx = [xx x];
     x0 = x;
 end
-
-figure(1)
-plot(u1(1,:), xx(1,:),'LineWidth', 2)
-hold on
-grid on
-plot(u1(1,:), xx(2,:),'k--')
-plot(u1(1,:), xx(3,:), '-*')
-xlabel('U, в.')
-ylabel('x(U), v(U), i(U)')
-legend('x(U)','v(U)','i(U)');
-    
+% 
+% figure(1)
+% plot(u1(1,:), xx(1,:),'LineWidth', 2)
+% hold on
+% grid on
+% plot(u1(1,:), xx(2,:),'k--')
+% plot(u1(1,:), xx(3,:), '-*')
+% xlabel('U, в.')
+% ylabel('x(U), v(U), i(U)')
+% legend('x(U)','v(U)','i(U)');
+%     
     
     %linearization
 %     
@@ -78,51 +78,58 @@ legend('x(U)','v(U)','i(U)');
 %     plot(t,yyy(1, :));
 
 
-    kp = 1; % с уменьшением возрастает перерегулирование
+    kp = -4.25; % с уменьшением возрастает перерегулирование
     ki = -0; % с уменьшением возрастает быстродействие и перерегулирование
-    kd = -0; % с уменьшением возрастает быстродействие, но возрастает перергулирование
-    u = 2.5;
-    x10 = -0.005;
-    out = sim('lev.mdl');
-    %create tf from sim model
-    tfdata = iddata(out.inputdata.signals.values,out.outputdata.signals.values,0.001);
-    N = 5;
-    sys_sim = tfest(tfdata,N)
-    figure(8)
-    bodeplot(sys_sim)
-    figure(9)
-    nyquist(sys_sim)
-    figure(10)
-    step(sys_sim,t)
-    figure(11)
-    x0 = [-0.25;0;0;0;0];
-    lsim(sys_sim,u,t,x0)
-    figure(12)
-    rlocus(sys_sim)
-    figure(13)
-    hold on
-    grid on
-    Legend = []
-for k = 1:1.5:5
-    x10 = x10-0.01
-    kd = 0;
-for i=2:4
-    kd = kd - 30*i;
-    out = sim('lev.mdl');
-    if u>2.5
-    plot(out.outputdata.time,out.outputdata.signals.values,'--','LineWidth', 1)
-    else
-        plot(out.outputdata.time,out.outputdata.signals.values,'-.','LineWidth', 1)
-    end
-
-    t = append("kp="  , num2str(kp),",ki=",num2str(ki),",kd=",num2str(kd))
-    t = append(t,",u=",num2str(u),",x10=",num2str(x10))
-    Legend = [Legend t];
-    legend(Legend);
-end
-end
-
-  
+    kd = -320; % с уменьшением возрастает быстродействие, но возрастает перергулирование
+    u = 3.5;
+    x10 = -0.04;
+    num = xlsread('table.xlsx');
+    ref = num(2:3,:)';
+    ref(:,1) = num(3,:)';
+    ref(:,2) = num(2,:)';
+        ref2 = num(2:3,:)';
+    ref2(:,1) = num(3,:)';
+    ref2(:,2) = num(1,:)';
+%     out = sim('lev.mdl');
+%     %create tf from sim model
+%     tfdata = iddata(out.inputdata.signals.values,out.outputdata.signals.values,0.001);
+%     N = 5;
+%     sys_sim = tfest(tfdata,N)
+%     figure(8)
+%     bodeplot(sys_sim)
+%     figure(9)
+%     nyquist(sys_sim)
+%     figure(10)
+%     step(sys_sim,t)
+%     figure(11)
+%     x0 = [-0.25;0;0;0;0];
+%     lsim(sys_sim,u,t,x0)
+%     figure(12)
+%     rlocus(sys_sim)
+%     figure(13)
+%     hold on
+%     grid on
+%     Legend = []
+% for k = 1:1.5:5
+%     x10 = x10-0.01
+%     kd = 0;
+% for i=2:4
+%     kd = kd - 30*i;
+%     out = sim('lev.mdl');
+%     if u>2.5
+%     plot(out.outputdata.time,out.outputdata.signals.values,'--','LineWidth', 1)
+%     else
+%         plot(out.outputdata.time,out.outputdata.signals.values,'-.','LineWidth', 1)
+%     end
+% 
+%     t = append("kp="  , num2str(kp),",ki=",num2str(ki),",kd=",num2str(kd))
+%     t = append(t,",u=",num2str(u),",x10=",num2str(x10))
+%     Legend = [Legend t];
+%     legend(Legend);
+% end
+% end
+% 
+%   
     
     
     

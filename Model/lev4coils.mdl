@@ -43,8 +43,8 @@ __MWOPC_PART_BEGIN__ /metadata/coreProperties.xml
   <dcterms:created xsi:type="dcterms:W3CDTF">2022-04-29T21:25:30Z</dcterms:created>
   <dc:creator>macbook_pro</dc:creator>
   <cp:lastModifiedBy>ik76</cp:lastModifiedBy>
-  <dcterms:modified xsi:type="dcterms:W3CDTF">2022-05-18T15:45:24Z</dcterms:modified>
-  <cp:revision>2.6</cp:revision>
+  <dcterms:modified xsi:type="dcterms:W3CDTF">2022-05-23T00:00:38Z</dcterms:modified>
+  <cp:revision>2.8</cp:revision>
   <cp:version>R2021b</cp:version>
 </cp:coreProperties>
 
@@ -264,8 +264,8 @@ __MWOPC_PART_BEGIN__ /simulink/blockdiagram.xml
     <ConfigManagerSettings>
       <P Name="ModifiedByFormat">%&lt;Auto&gt;</P>
       <P Name="ModifiedDateFormat">%&lt;Auto&gt;</P>
-      <P Name="RTWModifiedTimeStamp">574791026</P>
-      <P Name="ModelVersionFormat">%&lt;AutoIncrement:2.6&gt;</P>
+      <P Name="RTWModifiedTimeStamp">575175631</P>
+      <P Name="ModelVersionFormat">%&lt;AutoIncrement:2.8&gt;</P>
     </ConfigManagerSettings>
     <EditorSettings>
       <P Name="ScheduleConnectors">off</P>
@@ -1110,8 +1110,8 @@ __MWOPC_PART_BEGIN__ /simulink/graphicalInterface.xml
 __MWOPC_PART_BEGIN__ /simulink/modelDictionary.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <MF0 version="1.1" defaultPackage="slid" packageUris="http://schema.mathworks.com/mf0/slid/R2020b_20191110">
-  <System type="System" uuid="8b92c9a8-9616-4795-9803-b5ecd0484fe2">
-    <Interface type="Interface" uuid="8fd5a307-7213-4baa-9bed-9649eb4c0098"/>
+  <System type="System" uuid="f54df4ca-c1ee-413c-a15b-1ccec2b9a18a">
+    <Interface type="Interface" uuid="6b412c9b-de72-4714-97aa-88aedecb4f7b"/>
   </System>
 </MF0>
 __MWOPC_PART_BEGIN__ /simulink/plugins/LogicAnalyzerPlugin.xml
@@ -1123,27 +1123,27 @@ __MWOPC_PART_BEGIN__ /simulink/plugins/LogicAnalyzerPlugin.xml
 __MWOPC_PART_BEGIN__ /simulink/ScheduleCore.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <sltp_graph version="1.1" packageUris="http://schema.mathworks.com/mf0/sltp_mm/R2021b_202106150630">
-  <sltp.mm.core.Context type="sltp.mm.core.Context" uuid="c3f51c65-f055-4406-b370-39570b758667">
+  <sltp.mm.core.Context type="sltp.mm.core.Context" uuid="b1061aab-6baa-424f-a3cf-1a1bc87c3f24">
     <priorityDirection>HighNumberLast</priorityDirection>
     <editorState type="sltp.mm.core.EditorState" uuid="318e2aff-aec7-4d55-af1e-0dcd053484e0">
       <isSynchronized>true</isSynchronized>
       <panelState type="sltp.mm.core.EditorPanelState" uuid="7c590cda-18b3-4b85-a9a2-89ffb330154e"/>
     </editorState>
-    <rootTask type="sltp.mm.core.Task" uuid="3beed5d6-5ba6-4e74-bad1-cc529154c0af">
-      <context type="sltp.mm.core.Context" uuid="c3f51c65-f055-4406-b370-39570b758667"/>
+    <rootTask type="sltp.mm.core.Task" uuid="cfcdd008-c2e2-49e1-90c7-1213927d78cc">
+      <context type="sltp.mm.core.Context" uuid="b1061aab-6baa-424f-a3cf-1a1bc87c3f24"/>
       <explicit>false</explicit>
       <name>Default</name>
       <priority>-2147483648</priority>
-      <subgraph type="sltp.mm.core.Graph" uuid="80aaa206-1e90-4dd9-a587-21fecf26b8ef">
-        <tasks type="sltp.mm.core.Task" uuid="1caf7f13-a636-4495-9832-fdccadba7cee">
+      <subgraph type="sltp.mm.core.Graph" uuid="25494607-3b18-4fe6-a7f5-bfd540f2c3ec">
+        <tasks type="sltp.mm.core.Task" uuid="44f61ca8-5578-416f-87d6-b50c342d195d">
           <baseTask>true</baseTask>
-          <context type="sltp.mm.core.Context" uuid="c3f51c65-f055-4406-b370-39570b758667"/>
+          <context type="sltp.mm.core.Context" uuid="b1061aab-6baa-424f-a3cf-1a1bc87c3f24"/>
           <explicit>false</explicit>
           <id>1</id>
           <isTimed>true</isTimed>
           <name>Cont</name>
           <priority>40</priority>
-          <rates type="sltp.mm.core.Rate" uuid="a1036a76-b6e8-48bf-9d52-3e518b3bafdd">
+          <rates type="sltp.mm.core.Rate" uuid="c0fdfa2f-af4e-4c03-a82a-3e76dbd645b9">
             <annotation>Cont</annotation>
             <color>255</color>
             <hasBlocks>true</hasBlocks>
@@ -1153,7 +1153,7 @@ __MWOPC_PART_BEGIN__ /simulink/ScheduleCore.xml
             </rateSpec>
             <sti>0</sti>
           </rates>
-          <rates type="sltp.mm.core.Rate" uuid="14234321-6f6f-4b2b-8328-f8909ef581af">
+          <rates type="sltp.mm.core.Rate" uuid="3e9c8bfc-159b-47c7-a128-95f90b45fa80">
             <annotation>D1</annotation>
             <color>-436207361</color>
             <hasBlocks>true</hasBlocks>
@@ -1225,9 +1225,9 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
   <P Name="Open">on</P>
   <P Name="SetExecutionDomain">off</P>
   <P Name="ExecutionDomainType">Deduce</P>
-  <P Name="ZoomFactor">20</P>
+  <P Name="ZoomFactor">40</P>
   <P Name="ReportName">simulink-default.rpt</P>
-  <P Name="SIDHighWatermark">364</P>
+  <P Name="SIDHighWatermark">376</P>
   <P Name="SimulinkSubDomain">Simulink</P>
   <Block BlockType="Abs" Name="Abs" SID="191">
     <P Name="Position">[2070, 870, 2100, 900]</P>
@@ -1254,6 +1254,21 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
   <Block BlockType="Abs" Name="Abs12" SID="320">
     <P Name="Position">[1215, 1345, 1245, 1375]</P>
     <P Name="ZOrder">828</P>
+    <P Name="SaturateOnIntegerOverflow">off</P>
+  </Block>
+  <Block BlockType="Abs" Name="Abs13" SID="365">
+    <P Name="Position">[745, 1760, 775, 1790]</P>
+    <P Name="ZOrder">838</P>
+    <P Name="BlockMirror">on</P>
+    <P Name="NameLocation">top</P>
+    <P Name="SaturateOnIntegerOverflow">off</P>
+  </Block>
+  <Block BlockType="Abs" Name="Abs15" SID="374">
+    <P Name="Position">[730, 895, 760, 925]</P>
+    <P Name="ZOrder">846</P>
+    <P Name="BlockRotation">270</P>
+    <P Name="BlockMirror">on</P>
+    <P Name="NameLocation">left</P>
     <P Name="SaturateOnIntegerOverflow">off</P>
   </Block>
   <Block BlockType="Abs" Name="Abs2" SID="3">
@@ -1305,6 +1320,11 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="ZOrder">562</P>
     <P Name="Value">g</P>
   </Block>
+  <Block BlockType="Constant" Name="Constant10" SID="367">
+    <P Name="Position">[680, 1705, 710, 1735]</P>
+    <P Name="ZOrder">840</P>
+    <P Name="Value">10/l</P>
+  </Block>
   <Block BlockType="Constant" Name="Constant11" SID="203">
     <P Name="Position">[2040, 1970, 2070, 2000]</P>
     <P Name="ZOrder">717</P>
@@ -1338,7 +1358,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
   <Block BlockType="Constant" Name="Constant17" SID="209">
     <P Name="Position">[930, 1570, 960, 1600]</P>
     <P Name="ZOrder">783</P>
-    <P Name="Value">2.5</P>
+    <P Name="Value">3</P>
   </Block>
   <Block BlockType="Constant" Name="Constant18" SID="210">
     <P Name="Position">[2385, 1630, 2415, 1660]</P>
@@ -1364,11 +1384,6 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="Position">[1985, 1460, 2015, 1490]</P>
     <P Name="ZOrder">741</P>
     <P Name="Value">K3</P>
-  </Block>
-  <Block BlockType="Constant" Name="Constant22" SID="214">
-    <P Name="Position">[745, 1620, 775, 1650]</P>
-    <P Name="ZOrder">781</P>
-    <P Name="Value">2.5</P>
   </Block>
   <Block BlockType="Constant" Name="Constant23" SID="215">
     <P Name="Position">[2075, 2110, 2105, 2140]</P>
@@ -1408,7 +1423,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
   <Block BlockType="Constant" Name="Constant3" SID="169">
     <P Name="Position">[780, 1030, 810, 1060]</P>
     <P Name="ZOrder">673</P>
-    <P Name="Value">2.5</P>
+    <P Name="Value">5</P>
   </Block>
   <Block BlockType="Constant" Name="Constant30" SID="28">
     <P Name="Position">[2280, 910, 2310, 940]</P>
@@ -1435,10 +1450,10 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="ZOrder">722</P>
     <P Name="Value">3/2</P>
   </Block>
-  <Block BlockType="Constant" Name="Constant35" SID="33">
-    <P Name="Position">[745, 905, 775, 935]</P>
-    <P Name="ZOrder">655</P>
-    <P Name="Value">2.5</P>
+  <Block BlockType="Constant" Name="Constant35" SID="375">
+    <P Name="Position">[785, 835, 815, 865]</P>
+    <P Name="ZOrder">848</P>
+    <P Name="Value">10/l</P>
   </Block>
   <Block BlockType="Constant" Name="Constant36" SID="218">
     <P Name="Position">[1850, 2175, 1880, 2205]</P>
@@ -1600,12 +1615,12 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
   <Block BlockType="Gain" Name="Gain18" SID="230">
     <P Name="Position">[1050, 1757, 1115, 1803]</P>
     <P Name="ZOrder">769</P>
-    <P Name="Gain">-100</P>
+    <P Name="Gain">-1</P>
   </Block>
   <Block BlockType="Gain" Name="Gain19" SID="231">
     <P Name="Position">[1030, 1709, 1165, 1751]</P>
     <P Name="ZOrder">770</P>
-    <P Name="Gain">10</P>
+    <P Name="Gain">-10</P>
   </Block>
   <Block BlockType="Gain" Name="Gain2" SID="57">
     <P Name="Position">[1240, 1012, 1320, 1108]</P>
@@ -1707,7 +1722,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="Ports">[1, 1]</P>
     <P Name="Position">[2405, 2060, 2435, 2090]</P>
     <P Name="ZOrder">731</P>
-    <P Name="InitialCondition">x10y</P>
+    <P Name="InitialCondition">1</P>
   </Block>
   <Block BlockType="Integrator" Name="Integrator6" SID="72">
     <P Name="Ports">[1, 1]</P>
@@ -1854,7 +1869,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="Ports">[1]</P>
     <P Name="Position">[2510, 2099, 2540, 2131]</P>
     <P Name="ZOrder">837</P>
-    <P Name="ScopeSpecificationString">Simulink.scopes.TimeScopeBlockCfg(&apos;CurrentConfiguration&apos;, extmgr.ConfigurationSet(extmgr.Configuration(&apos;Core&apos;,&apos;General UI&apos;,true),extmgr.Configuration(&apos;Core&apos;,&apos;Source UI&apos;,true),extmgr.Configuration(&apos;Sources&apos;,&apos;WiredSimulink&apos;,true,&apos;DataLoggingVariableName&apos;,&apos;scopeOuty&apos;,&apos;DataLogging&apos;,true,&apos;DataLoggingSaveFormat&apos;,&apos;StructureWithTime&apos;),extmgr.Configuration(&apos;Visuals&apos;,&apos;Time Domain&apos;,true,&apos;SerializedDisplays&apos;,{struct(&apos;MinYLimReal&apos;,&apos;-0.01957&apos;,&apos;MaxYLimReal&apos;,&apos;0.01996&apos;,&apos;YLabelReal&apos;,&apos;&apos;,&apos;MinYLimMag&apos;,&apos;0.00000&apos;,&apos;MaxYLimMag&apos;,&apos;0.01996&apos;,&apos;LegendVisibility&apos;,&apos;Off&apos;,&apos;XGrid&apos;,true,&apos;YGrid&apos;,true,&apos;PlotMagPhase&apos;,false,&apos;AxesColor&apos;,[0 0 0],&apos;AxesTickColor&apos;,[0.686274509803922 0.686274509803922 0.686274509803922],&apos;ColorOrder&apos;,[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],&apos;Title&apos;,&apos;%&lt;SignalLabel&gt;&apos;,&apos;LinePropertiesCache&apos;,{{}},&apos;UserDefinedChannelNames&apos;,{{}},&apos;NumLines&apos;,0,&apos;LineNames&apos;,{{[]}},&apos;ShowContent&apos;,true,&apos;Placement&apos;,1)},&apos;DisplayPropertyDefaults&apos;,struct(&apos;MinYLimReal&apos;,&apos;-0.01957&apos;,&apos;MaxYLimReal&apos;,&apos;0.01996&apos;,&apos;YLabelReal&apos;,&apos;&apos;,&apos;MinYLimMag&apos;,&apos;0.00000&apos;,&apos;MaxYLimMag&apos;,&apos;0.01996&apos;,&apos;LegendVisibility&apos;,&apos;Off&apos;,&apos;XGrid&apos;,true,&apos;YGrid&apos;,true,&apos;PlotMagPhase&apos;,false,&apos;AxesColor&apos;,[0 0 0],&apos;AxesTickColor&apos;,[0.686274509803922 0.686274509803922 0.686274509803922],&apos;ColorOrder&apos;,[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration(&apos;Tools&apos;,&apos;Plot Navigation&apos;,true),extmgr.Configuration(&apos;Tools&apos;,&apos;Measurements&apos;,true,&apos;Version&apos;,&apos;2021b&apos;)),&apos;Version&apos;,&apos;2021b&apos;,&apos;Position&apos;,[180 116 820 544])</P>
+    <P Name="ScopeSpecificationString">Simulink.scopes.TimeScopeBlockCfg(&apos;CurrentConfiguration&apos;, extmgr.ConfigurationSet(extmgr.Configuration(&apos;Core&apos;,&apos;General UI&apos;,true),extmgr.Configuration(&apos;Core&apos;,&apos;Source UI&apos;,true),extmgr.Configuration(&apos;Sources&apos;,&apos;WiredSimulink&apos;,true,&apos;DataLoggingVariableName&apos;,&apos;scopeOuty&apos;,&apos;DataLogging&apos;,true,&apos;DataLoggingSaveFormat&apos;,&apos;StructureWithTime&apos;),extmgr.Configuration(&apos;Visuals&apos;,&apos;Time Domain&apos;,true,&apos;SerializedDisplays&apos;,{struct(&apos;MinYLimReal&apos;,&apos;0.86865&apos;,&apos;MaxYLimReal&apos;,&apos;1.0146&apos;,&apos;YLabelReal&apos;,&apos;&apos;,&apos;MinYLimMag&apos;,&apos;0.86865&apos;,&apos;MaxYLimMag&apos;,&apos;1.0146&apos;,&apos;LegendVisibility&apos;,&apos;Off&apos;,&apos;XGrid&apos;,true,&apos;YGrid&apos;,true,&apos;PlotMagPhase&apos;,false,&apos;AxesColor&apos;,[0 0 0],&apos;AxesTickColor&apos;,[0.686274509803922 0.686274509803922 0.686274509803922],&apos;ColorOrder&apos;,[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],&apos;Title&apos;,&apos;%&lt;SignalLabel&gt;&apos;,&apos;LinePropertiesCache&apos;,{{}},&apos;UserDefinedChannelNames&apos;,{{}},&apos;NumLines&apos;,1,&apos;LineNames&apos;,{{&apos;Integrator5&apos;}},&apos;ShowContent&apos;,true,&apos;Placement&apos;,1)},&apos;DisplayPropertyDefaults&apos;,struct(&apos;MinYLimReal&apos;,&apos;0.86865&apos;,&apos;MaxYLimReal&apos;,&apos;1.0146&apos;,&apos;YLabelReal&apos;,&apos;&apos;,&apos;MinYLimMag&apos;,&apos;0.86865&apos;,&apos;MaxYLimMag&apos;,&apos;1.0146&apos;,&apos;LegendVisibility&apos;,&apos;Off&apos;,&apos;XGrid&apos;,true,&apos;YGrid&apos;,true,&apos;PlotMagPhase&apos;,false,&apos;AxesColor&apos;,[0 0 0],&apos;AxesTickColor&apos;,[0.686274509803922 0.686274509803922 0.686274509803922],&apos;ColorOrder&apos;,[0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.831372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863])),extmgr.Configuration(&apos;Tools&apos;,&apos;Plot Navigation&apos;,true),extmgr.Configuration(&apos;Tools&apos;,&apos;Measurements&apos;,true,&apos;Version&apos;,&apos;2021b&apos;)),&apos;Version&apos;,&apos;2021b&apos;,&apos;Position&apos;,[180 116 820 544])</P>
     <P Name="NumInputPorts">1</P>
     <P Name="Floating">off</P>
   </Block>
@@ -2096,12 +2111,6 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="ZOrder">762</P>
     <P Name="IconShape">rectangular</P>
   </Block>
-  <Block BlockType="Sum" Name="Subtract16" SID="276">
-    <P Name="Ports">[2, 1]</P>
-    <P Name="Position">[805, 1652, 835, 1683]</P>
-    <P Name="ZOrder">780</P>
-    <P Name="IconShape">rectangular</P>
-  </Block>
   <Block BlockType="Sum" Name="Subtract17" SID="277">
     <P Name="Ports">[2, 1]</P>
     <P Name="Position">[1985, 2022, 2015, 2053]</P>
@@ -2174,11 +2183,19 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="ZOrder">727</P>
     <P Name="IconShape">rectangular</P>
   </Block>
-  <Block BlockType="Sum" Name="Subtract27" SID="153">
+  <Block BlockType="Sum" Name="Subtract27" SID="376">
     <P Name="Ports">[2, 1]</P>
-    <P Name="Position">[790, 932, 820, 963]</P>
-    <P Name="ZOrder">654</P>
+    <P Name="Position">[785, 932, 815, 963]</P>
+    <P Name="ZOrder">847</P>
     <P Name="IconShape">rectangular</P>
+    <P Name="Inputs">+-</P>
+  </Block>
+  <Block BlockType="Sum" Name="Subtract28" SID="366">
+    <P Name="Ports">[2, 1]</P>
+    <P Name="Position">[760, 1707, 790, 1738]</P>
+    <P Name="ZOrder">839</P>
+    <P Name="IconShape">rectangular</P>
+    <P Name="Inputs">+-</P>
   </Block>
   <Block BlockType="Sum" Name="Subtract3" SID="154">
     <P Name="Ports">[2, 1]</P>
@@ -2372,12 +2389,6 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="Dst">167#in:1</P>
   </Line>
   <Line>
-    <P Name="ZOrder">15</P>
-    <P Name="Src">33#out:1</P>
-    <P Name="Points">[2, 0; 0, 20]</P>
-    <P Name="Dst">153#in:1</P>
-  </Line>
-  <Line>
     <P Name="ZOrder">17</P>
     <P Name="Src">146#out:1</P>
     <P Name="Points">[92, 0; 0, -25]</P>
@@ -2438,8 +2449,8 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="Dst">128#in:2</P>
   </Line>
   <Line>
-    <P Name="ZOrder">61</P>
-    <P Name="Src">153#out:1</P>
+    <P Name="ZOrder">2069</P>
+    <P Name="Src">376#out:1</P>
     <P Name="Dst">81#in:1</P>
   </Line>
   <Line>
@@ -2886,10 +2897,9 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="Dst">162#in:1</P>
   </Line>
   <Line>
-    <P Name="ZOrder">308</P>
+    <P Name="ZOrder">2067</P>
     <P Name="Src">173#out:1</P>
-    <P Name="Points">[0, 15; -6, 0; 0, 70]</P>
-    <P Name="Dst">153#in:2</P>
+    <P Name="Dst">374#in:1</P>
   </Line>
   <Line>
     <P Name="ZOrder">404</P>
@@ -2952,12 +2962,6 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="ZOrder">435</P>
     <P Name="Src">227#out:1</P>
     <P Name="Dst">280#in:1</P>
-  </Line>
-  <Line>
-    <P Name="ZOrder">436</P>
-    <P Name="Src">214#out:1</P>
-    <P Name="Points">[10, 0]</P>
-    <P Name="Dst">276#in:1</P>
   </Line>
   <Line>
     <P Name="ZOrder">437</P>
@@ -3092,8 +3096,9 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="Dst">257#in:2</P>
   </Line>
   <Line>
-    <P Name="ZOrder">465</P>
-    <P Name="Src">276#out:1</P>
+    <P Name="ZOrder">2054</P>
+    <P Name="Src">366#out:1</P>
+    <P Name="Points">[33, 0; 0, -55]</P>
     <P Name="Dst">238#in:1</P>
   </Line>
   <Line>
@@ -3310,9 +3315,9 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="Dst">272#in:1</P>
   </Line>
   <Line>
-    <P Name="ZOrder">1482</P>
+    <P Name="ZOrder">2076</P>
     <P Name="Src">235#out:1</P>
-    <P Name="Points">[33, 0; 0, 12]</P>
+    <P Name="Points">[28, 0; 0, 12]</P>
     <P Name="Dst">282#in:2</P>
   </Line>
   <Line>
@@ -3404,10 +3409,10 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="Dst">277#in:1</P>
   </Line>
   <Line>
-    <P Name="ZOrder">517</P>
+    <P Name="ZOrder">2051</P>
     <P Name="Src">229#out:1</P>
-    <P Name="Points">[0, -11; -75, 0; 0, -79; 60, 0]</P>
-    <P Name="Dst">276#in:2</P>
+    <P Name="Points">[0, -11; -30, 0]</P>
+    <P Name="Dst">365#in:1</P>
   </Line>
   <Line>
     <P Name="ZOrder">518</P>
@@ -3455,9 +3460,9 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="Dst">223#in:1</P>
   </Line>
   <Line>
-    <P Name="ZOrder">530</P>
+    <P Name="ZOrder">2077</P>
     <P Name="Src">231#out:1</P>
-    <P Name="Points">[63, 0; 0, 38]</P>
+    <P Name="Points">[66, 0; 0, 38]</P>
     <P Name="Dst">282#in:1</P>
   </Line>
   <Line>
@@ -3651,7 +3656,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="Dst">168#in:3</P>
   </Line>
   <Line>
-    <P Name="ZOrder">1481</P>
+    <P Name="ZOrder">2075</P>
     <P Name="Src">228#out:1</P>
     <P Name="Points">[19, 0; 0, -30]</P>
     <P Name="Dst">282#in:3</P>
@@ -3716,7 +3721,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="Dst">186#in:2</P>
   </Line>
   <Line>
-    <P Name="ZOrder">1464</P>
+    <P Name="ZOrder">2078</P>
     <P Name="Src">325#out:1</P>
     <P Name="Dst">305#in:1</P>
   </Line>
@@ -3724,6 +3729,30 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="ZOrder">1484</P>
     <P Name="Src">329#out:1</P>
     <P Name="Dst">320#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">2050</P>
+    <P Name="Src">365#out:1</P>
+    <P Name="Points">[-5, 0; 0, -45]</P>
+    <P Name="Dst">366#in:2</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">2052</P>
+    <P Name="Src">367#out:1</P>
+    <P Name="Points">[3, 0; 0, -5]</P>
+    <P Name="Dst">366#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">2068</P>
+    <P Name="Src">375#out:1</P>
+    <P Name="Points">[27, 0; 0, 55; -78, 0; 0, 35]</P>
+    <P Name="Dst">376#in:1</P>
+  </Line>
+  <Line>
+    <P Name="ZOrder">2070</P>
+    <P Name="Src">374#out:1</P>
+    <P Name="Points">[0, 25]</P>
+    <P Name="Dst">376#in:2</P>
   </Line>
   <Annotation SID="357">
     <P Name="Position">[2470, 1026, 2853, 1195]</P>
@@ -3733,7 +3762,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">776</P>
+    <P Name="ZOrder">1186</P>
     <P Name="FontSize">12</P>
   </Annotation>
   <Annotation SID="345">
@@ -3744,7 +3773,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">781</P>
+    <P Name="ZOrder">1191</P>
     <P Name="FontSize">12</P>
   </Annotation>
   <Annotation SID="344">
@@ -3755,7 +3784,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">778</P>
+    <P Name="ZOrder">1188</P>
     <P Name="FontSize">12</P>
   </Annotation>
   <Annotation SID="343">
@@ -3766,7 +3795,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">777</P>
+    <P Name="ZOrder">1187</P>
     <P Name="FontSize">12</P>
   </Annotation>
   <Annotation SID="342">
@@ -3777,7 +3806,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">775</P>
+    <P Name="ZOrder">1185</P>
     <P Name="FontSize">12</P>
   </Annotation>
   <Annotation SID="341">
@@ -3788,7 +3817,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">774</P>
+    <P Name="ZOrder">1184</P>
     <P Name="FontSize">12</P>
   </Annotation>
   <Annotation SID="340">
@@ -3799,7 +3828,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">772</P>
+    <P Name="ZOrder">1182</P>
     <P Name="FontSize">12</P>
   </Annotation>
   <Annotation SID="339">
@@ -3810,7 +3839,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">779</P>
+    <P Name="ZOrder">1189</P>
     <P Name="FontSize">12</P>
   </Annotation>
   <Annotation SID="338">
@@ -3821,7 +3850,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">786</P>
+    <P Name="ZOrder">1196</P>
     <P Name="FontSize">12</P>
   </Annotation>
   <Annotation SID="337">
@@ -3832,7 +3861,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">782</P>
+    <P Name="ZOrder">1192</P>
     <P Name="FontSize">12</P>
   </Annotation>
   <Annotation SID="336">
@@ -3843,7 +3872,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">784</P>
+    <P Name="ZOrder">1194</P>
     <P Name="FontSize">12</P>
   </Annotation>
   <Annotation SID="335">
@@ -3854,7 +3883,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">783</P>
+    <P Name="ZOrder">1193</P>
     <P Name="FontSize">12</P>
   </Annotation>
   <Annotation SID="334">
@@ -3865,7 +3894,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">773</P>
+    <P Name="ZOrder">1183</P>
     <P Name="FontSize">12</P>
   </Annotation>
   <Annotation SID="333">
@@ -3876,7 +3905,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">780</P>
+    <P Name="ZOrder">1190</P>
     <P Name="FontSize">12</P>
   </Annotation>
   <Annotation SID="332">
@@ -3887,7 +3916,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">785</P>
+    <P Name="ZOrder">1195</P>
     <P Name="FontSize">12</P>
   </Annotation>
   <Annotation SID="331">
@@ -3899,7 +3928,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">771</P>
+    <P Name="ZOrder">1180</P>
     <P Name="FontSize">12</P>
   </Annotation>
   <Annotation SID="346">
@@ -4132,10 +4161,10 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
         <P Name="IsTabbed" Class="logical">1</P>
         <P Name="ViewObjType" Class="char">SimulinkTopLevel</P>
         <P Name="LoadSaveID" Class="char">0</P>
-        <P Name="Extents" Class="double">[1896.0, 855.0]</P>
-        <P Name="ZoomFactor" Class="double">0.2</P>
-        <P Name="Offset" Class="double">[-1290.0639536649462, -211.60398666127466]</P>
-        <P Name="SceneRectInView" Class="double">[-1290.0639536649462, -211.60398666127466, 6319.9999999999991, 2849.9999999999995]</P>
+        <P Name="Extents" Class="double">[1896.0, 539.0]</P>
+        <P Name="ZoomFactor" Class="double">0.4</P>
+        <P Name="Offset" Class="double">[-153.5876145082959, 1436.5787848456898]</P>
+        <P Name="SceneRectInView" Class="double">[-153.5876145082959, 1436.5787848456898, 3159.9999999999995, 898.33333333333314]</P>
       </Object>
       <Array PropName="DockComponentsInfo" Type="Simulink.DockComponentInfo" Dimension="1*2">
         <Object ObjectID="6">
@@ -4164,7 +4193,7 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
           <P Name="Minimized" Class="char">On</P>
         </Object>
       </Array>
-      <P Name="WindowState" Class="char">AAAA/wAAAAD9AAAAAwAAAAAAAAC9AAAB+PwCAAAABPsAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAAAAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAACTAP////sAAABgAFMAaQBtAHUAbABpAG4AawA6AEUAZABpAHQAbwByADoAUgBlAGYAZQByAGUAbgBjAGUAZABGAGkAbABlAHMALwBSAGUAZgBlAHIAZQBuAGMAZQBkACAARgBpAGwAZQBzAAAAAAD/////AAAAxwD///8AAAABAAAAAAAAAAD8AgAAAAH7AAAAVABHAEwAVQBFADIAOgBQAHIAbwBwAGUAcgB0AHkASQBuAHMAcABlAGMAdABvAHIALwBQAHIAbwBwAGUAcgB0AHkAIABJAG4AcwBwAGUAYwB0AG8AcgAAAAAA/////wAAAoAA////AAAAAwAAAAAAAAAA/AEAAAAB+/////8AAAAAAP////8AAAIDAP///wAAB6AAAAOlAAAAAQAAAAIAAAABAAAAAvwAAAADAAAAAAAAAAEAAAA2AGMAbwBsAGwAYQBwAHMAaQBiAGwAZQBQAGEAbgBlAGwAVABvAG8AbABCAGEAcgBMAGUAZgB0AwAAAAD/////AAAAAAAAAAAAAAABAAAAAQAAADgAYwBvAGwAbABhAHAAcwBpAGIAbABlAFAAYQBuAGUAbABUAG8AbwBsAEIAYQByAFIAaQBnAGgAdAMAAAAA/////wAAAAAAAAAAAAAAAwAAAAEAAAA6AGMAbwBsAGwAYQBwAHMAaQBiAGwAZQBQAGEAbgBlAGwAVABvAG8AbABCAGEAcgBCAG8AdAB0AG8AbQAAAAAA/////wAAAAAAAAAA</P>
+      <P Name="WindowState" Class="char">AAAA/wAAAAD9AAAAAwAAAAAAAAC9AAAB+PwCAAAABPsAAAAWAEQAbwBjAGsAVwBpAGQAZwBlAHQAMwEAAAAxAAAB+AAAAAAAAAAA+wAAABYARABvAGMAawBXAGkAZABnAGUAdAA0AAAAAAD/////AAAAAAAAAAD7AAAAUgBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQALwBHAEwAVQBFADIAIAB0AHIAZQBlACAAYwBvAG0AcABvAG4AZQBuAHQAAAAAAP////8AAACTAP////sAAABgAFMAaQBtAHUAbABpAG4AawA6AEUAZABpAHQAbwByADoAUgBlAGYAZQByAGUAbgBjAGUAZABGAGkAbABlAHMALwBSAGUAZgBlAHIAZQBuAGMAZQBkACAARgBpAGwAZQBzAAAAAAD/////AAAAxwD///8AAAABAAAAAAAAAAD8AgAAAAH7AAAAVABHAEwAVQBFADIAOgBQAHIAbwBwAGUAcgB0AHkASQBuAHMAcABlAGMAdABvAHIALwBQAHIAbwBwAGUAcgB0AHkAIABJAG4AcwBwAGUAYwB0AG8AcgAAAAAA/////wAAAoAA////AAAAAwAAB6AAAAE2/AEAAAAB+/////8BAAAAJAAAB6AAAAIDAP///wAAB6AAAAJpAAAAAQAAAAIAAAABAAAAAvwAAAADAAAAAAAAAAEAAAA2AGMAbwBsAGwAYQBwAHMAaQBiAGwAZQBQAGEAbgBlAGwAVABvAG8AbABCAGEAcgBMAGUAZgB0AwAAAAD/////AAAAAAAAAAAAAAABAAAAAQAAADgAYwBvAGwAbABhAHAAcwBpAGIAbABlAFAAYQBuAGUAbABUAG8AbwBsAEIAYQByAFIAaQBnAGgAdAMAAAAA/////wAAAAAAAAAAAAAAAwAAAAEAAAA6AGMAbwBsAGwAYQBwAHMAaQBiAGwAZQBQAGEAbgBlAGwAVABvAG8AbABCAGEAcgBCAG8AdAB0AG8AbQAAAAAA/////wAAAAAAAAAA</P>
       <Array PropName="PersistedApps" Type="Cell" Dimension="0*1"/>
       <P Name="WindowUuid" Class="char">73b98cb5-e14f-4073-9185-4f69a7e93b9f</P>
     </Object>

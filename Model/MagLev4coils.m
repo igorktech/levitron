@@ -51,76 +51,27 @@ K3 = K1
 global K4 
 K4 = K2
 % 
-% x10z = -0.03
-% x10y = -0.008
-% x10x = -0.008
-% 
-%   Legend = []
-% 
-%     figure(1)
-%     hold on
-%     grid on
-% for i=1:3
-%    x10x = x10x + i*0.004;
-%     out = sim('lev4coils.mdl');
-%    
-%         plot(out.scopeOutz.time,out.scopeOutz.signals.values,'-.','LineWidth', 1)
-%         t = append("sim="  , num2str(i),",z0=",num2str(x10z));
-%         Legend = [Legend t];
-%         plot(out.scopeOutx.time,out.scopeOuty.signals.values,'-.','LineWidth', 1)
-%         t = append("sim="  , num2str(i),",y0=",num2str(x10y));
-%         Legend = [Legend t];
-%         plot(out.scopeOuty.time,out.scopeOutx.signals.values,'-.','LineWidth', 1)
-%         t = append("sim="  , num2str(i),",x0=",num2str(x10x));
-%         Legend = [Legend t];
-%     
-% 
-%     legend(Legend);
-% end
-% 
-%    
-% for i=1:3
-%    x10y = x10y + i*0.004;
-%     out = sim('lev4coils.mdl');
-%    
-%         plot(out.scopeOutz.time,out.scopeOutz.signals.values,'--','LineWidth', 1)
-%         t = append("sim="  , num2str(i+3),",z0=",num2str(x10z));
-%         Legend = [Legend t];
-%         plot(out.scopeOutx.time,out.scopeOuty.signals.values,'--','LineWidth', 1)
-%         t = append("sim="  , num2str(i+3),",y0=",num2str(x10y));
-%         Legend = [Legend t];
-%         plot(out.scopeOuty.time,out.scopeOutx.signals.values,'--','LineWidth', 1)
-%         t = append("sim="  , num2str(i+3),",x0=",num2str(x10x));
-%         Legend = [Legend t];
-%     
-% 
-%     legend(Legend);
-% end
-    
-%xyz
-
 x10z = -0.03
 x10y = -0.008
 x10x = -0.008
 
   Legend = []
 
-    figure(2)
+    figure(1)
     hold on
     grid on
 for i=1:3
    x10x = x10x + i*0.004;
     out = sim('lev4coils.mdl');
    
-    plot(out.scopeOutx.signals.values,out.scopeOuty.signals.values)
-        
+        plot(out.scopeOutz.time,out.scopeOutz.signals.values,'-.','LineWidth', 1)
         t = append("sim="  , num2str(i),",z0=",num2str(x10z));
-        
-       
-        t = append(t,",y0=",num2str(x10y));
-       
-        
-        t = append(t,",x0=",num2str(x10x));
+        Legend = [Legend t];
+        plot(out.scopeOutx.time,out.scopeOuty.signals.values,'-.','LineWidth', 1)
+        t = append("sim="  , num2str(i),",y0=",num2str(x10y));
+        Legend = [Legend t];
+        plot(out.scopeOuty.time,out.scopeOutx.signals.values,'-.','LineWidth', 1)
+        t = append("sim="  , num2str(i),",x0=",num2str(x10x));
         Legend = [Legend t];
     
 
@@ -132,18 +83,67 @@ for i=1:3
    x10y = x10y + i*0.004;
     out = sim('lev4coils.mdl');
    
-    plot(out.scopeOutx.signals.values,out.scopeOuty.signals.values,'--')
-        
-        t = append("sim="  , num2str(i),",z0=",num2str(x10z));
-        
-       
-        t = append(t,",y0=",num2str(x10y));
-       
-        
-        t = append(t,",x0=",num2str(x10x));
+        plot(out.scopeOutz.time,out.scopeOutz.signals.values,'--','LineWidth', 1)
+        t = append("sim="  , num2str(i+3),",z0=",num2str(x10z));
+        Legend = [Legend t];
+        plot(out.scopeOutx.time,out.scopeOuty.signals.values,'--','LineWidth', 1)
+        t = append("sim="  , num2str(i+3),",y0=",num2str(x10y));
+        Legend = [Legend t];
+        plot(out.scopeOuty.time,out.scopeOutx.signals.values,'--','LineWidth', 1)
+        t = append("sim="  , num2str(i+3),",x0=",num2str(x10x));
         Legend = [Legend t];
     
 
     legend(Legend);
 end
- 
+    
+%xyz
+% 
+% x10z = -0.03
+% x10y = -0.008
+% x10x = -0.008
+% 
+%   Legend = []
+% 
+%     figure(2)
+%     hold on
+%     grid on
+% for i=1:3
+%    x10x = x10x + i*0.004;
+%     out = sim('lev4coils.mdl');
+%    
+%     plot(out.scopeOutx.signals.values,out.scopeOuty.signals.values)
+%         
+%         t = append("sim="  , num2str(i),",z0=",num2str(x10z));
+%         
+%        
+%         t = append(t,",y0=",num2str(x10y));
+%        
+%         
+%         t = append(t,",x0=",num2str(x10x));
+%         Legend = [Legend t];
+%     
+% 
+%     legend(Legend);
+% end
+% 
+%    
+% for i=1:3
+%    x10y = x10y + i*0.004;
+%     out = sim('lev4coils.mdl');
+%    
+%     plot(out.scopeOutx.signals.values,out.scopeOuty.signals.values,'--')
+%         
+%         t = append("sim="  , num2str(i),",z0=",num2str(x10z));
+%         
+%        
+%         t = append(t,",y0=",num2str(x10y));
+%        
+%         
+%         t = append(t,",x0=",num2str(x10x));
+%         Legend = [Legend t];
+%     
+% 
+%     legend(Legend);
+% end
+%  

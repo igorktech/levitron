@@ -19,7 +19,7 @@ void setup() {
     Serial.begin(115200);
     pinMode(D_Pin1Z, OUTPUT);
     pinMode(D_Pin2Z, OUTPUT);
-    pinMode(13, OUTPUT);
+
 
     pidZ.k = 1;
     pidZ.p = -4.25;
